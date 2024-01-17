@@ -12,7 +12,7 @@ const quotes = [
     "It always seems impossible until it's done. - Nelson Mandela"
 ];
 
-let currentBackgroundIndex = 0;
+
 const backgrounds = [
     'url("https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', // Change to the path of your background images
     'url("https://images.pexels.com/photos/2155202/pexels-photo-2155202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
@@ -35,6 +35,6 @@ function generateQuote() {
     quoteContainer.innerHTML = `<p>${quote}</p>`;
 
     // Change background image
-    currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
+   const currentBackgroundIndex = Math.floor(Math.random() * backgrounds.length);
     document.body.style.backgroundImage = backgrounds[currentBackgroundIndex];
 }
